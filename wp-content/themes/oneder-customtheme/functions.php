@@ -20,8 +20,36 @@ function oneder_scripts()
 	wp_enqueue_script('oneder-popper', "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", array(), "3.4.1", true);
 	wp_enqueue_script('oneder-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js", array(), "3.4.1", true);
 	wp_enqueue_script('oneder-scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
+
+	wp_enqueue_style('oneder-style', get_template_directory_uri() . "/style.css", array('oneder-bootstrap'), $version, "all");
+	wp_enqueue_style('oneder-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", array(), '4.4.1', "all");
+	wp_enqueue_style('font-awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+	wp_enqueue_style('onder-font', "https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap");
+	wp_enqueue_script('oneder-jquery', "https://code.jquery.com/jquery-3.4.1.slim.min.js", array(), "3.4.1", true);
+	wp_enqueue_script('oneder-popper', "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", array(), "3.4.1", true);
+	wp_enqueue_script('oneder-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js", array(), "3.4.1", true);
+	wp_enqueue_script('oneder-scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'oneder_scripts');
+
+
+
+if (!function_exists('fa_custom_setup_kit')) {
+   function fa_custom_setup_kit($kit_url = '')
+   {
+	   foreach (['wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts'] as $action) {
+		   add_action(
+			   $action,
+			   function () use ($kit_url) {
+				   wp_enqueue_script('font-awesome-kit', $kit_url, [], null);
+			   }
+		   );
+	   }
+   }
+}
+
+fa_custom_setup_kit('https://kit.fontawesome.com/213eadb7f3.js');
+
 
 function oneder_customizer_settings($wp_customize)
 {

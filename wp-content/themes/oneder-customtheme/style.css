@@ -374,6 +374,7 @@ body {
     font-size: 2.5em;
     color: #007bff; /* Adjust color to match your theme */
     margin-bottom: 10px;
+    font-weight: 900;
 }
  
 .filters {
@@ -634,6 +635,7 @@ text-decoration: none;
 /* Blog Section Styles */
 .blog-section {
     padding: 60px 0;
+
   }
    
   .section-title {
@@ -757,7 +759,7 @@ text-decoration: none;
 /******************************** CONTACT US *****************************/
 
 .container h2{
-    font-size: 1.8rem;
+    font-size: 40px;
     font-weight: 900;
     color: #007bff;
     margin-bottom: 20px;
@@ -811,6 +813,14 @@ text-decoration: none;
 }
 
 
+.footer-divider{
+    border: 0px;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+    padding: auto;
+}
+
 .row p{
    font-size: 0.9rem;
    font-weight: 100;
@@ -820,6 +830,7 @@ text-decoration: none;
    margin-bottom: 1rem;
 }
 
+
 .menu a{
     color: white;
 }
@@ -827,4 +838,8 @@ text-decoration: none;
 dl, ol, ul {
     margin-top: 30px;
     margin-bottom: 1rem;
+}
+
+.col p{
+    color: white;
 }
