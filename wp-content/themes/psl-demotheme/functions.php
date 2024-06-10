@@ -123,8 +123,51 @@ function oneder_customizer_settings($wp_customize)
 		'section' => 'oneder_customizer_section',
 		'type' => 'text',
 	));
+
+
+	// Section-Contact Us
+	$wp_customize->add_section('contact_section', array(
+        'title' => __('Contact Us', 'oneder'),
+        'priority' => 30,
+    ));
+ 
+    // Address Setting
+    $wp_customize->add_setting('contact_address', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('contact_address', array(
+        'label' => __('Address', 'oneder'),
+        'section' => 'contact_section',
+        'type' => 'text',
+    ));
+ 
+    // Phone Number Setting
+    $wp_customize->add_setting('contact_phone', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('contact_phone', array(
+        'label' => __('Phone Number', 'oneder'),
+        'section' => 'contact_section',
+        'type' => 'text',
+    ));
+ 
+    // Email Setting
+    $wp_customize->add_setting('contact_email', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    $wp_customize->add_control('contact_email', array(
+        'label' => __('Email', 'oneder'),
+        'section' => 'contact_section',
+        'type' => 'email',
+    ));
 }
+
 add_action('customize_register', 'oneder_customizer_settings');
+
+
 
 
 ///////////////////////////////////////////////////////////////

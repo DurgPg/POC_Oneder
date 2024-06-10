@@ -35,18 +35,18 @@
 			</div>
 		</div>
 
-		<hr class= "footer-divider">
+		<hr id="footer-line" class= "footer-divider">
 
 		<div class="container pt-2 pb-2">
 		<div class="row d-flex align-items-center">
-			<div class="col">
+			<div  class="col">
 				<p>&copy: <?php bloginfo ('name');?> <?php echo date('Y;');?>/Created by <a href="" target ="_blank">Athena Rodrigues, Durgesh Prabhugaonkar</a>
 			</div>
 		</div>
     </footer>
 	
 
-    </div><!-- #page -->
+    <!-- </div>#page -->
     <?php wp_footer(); ?>
 </body>
 </html>
